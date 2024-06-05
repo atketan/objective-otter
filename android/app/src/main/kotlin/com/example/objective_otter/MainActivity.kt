@@ -1,4 +1,4 @@
-package com.example.objective_otter
+package com.atketan.objective_otter
 
 import io.flutter.embedding.android.FlutterActivity
 
