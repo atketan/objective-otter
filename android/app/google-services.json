@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1061341948351",
+    "project_id": "objective-otter",
+    "storage_bucket": "objective-otter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061341948351:android:f44b7a72c08a2b00d3990a",
+        "android_client_info": {
+          "package_name": "com.atketan.objective_otter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTVJBCpbpxudC1yOzaQTrixXzOI5CJiis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
