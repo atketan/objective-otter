@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:objective_otter/presentation/dashboard/otter_dashboard.dart';
+import 'package:objective_otter/core/app_router.dart';
 
 class OtterApp extends StatelessWidget {
   const OtterApp({super.key});
@@ -7,8 +7,10 @@ class OtterApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: 'Objective Otter',
+      routerConfig: getRoutes(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,10 +27,13 @@ class OtterApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const OtterDashboard(),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        useMaterial3: true,
+      ),
     );
   }
 }
