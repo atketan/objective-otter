@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:objective_otter/presentation/home/widgets/projects_card_widget.dart';
+import 'package:objective_otter/presentation/projects_home/widgets/projects_card_widget.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final String projectId;

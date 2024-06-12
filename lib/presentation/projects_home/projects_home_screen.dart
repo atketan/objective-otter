@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:objective_otter/presentation/home/widgets/projects_card_widget.dart';
+import 'package:objective_otter/presentation/projects_home/widgets/projects_card_widget.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ProjectsScreen extends StatefulWidget {
+  const ProjectsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => HomeScreenState();
+  State<ProjectsScreen> createState() => ProjectsScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class ProjectsScreenState extends State<ProjectsScreen> {
   List<ProjectsCardDetails> projectCards = [
     ProjectsCardDetails(
       projectName: "Project Bumblebee",

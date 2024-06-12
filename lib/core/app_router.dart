@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:objective_otter/presentation/about/about_screen.dart';
-import 'package:objective_otter/presentation/home/home_screen.dart';
-import 'package:objective_otter/presentation/home/main_layout.dart';
+import 'package:objective_otter/presentation/projects_home/projects_home_screen.dart';
+import 'package:objective_otter/presentation/projects_home/main_layout.dart';
 import 'package:objective_otter/presentation/project_details/project_details_screen.dart';
 import 'package:objective_otter/presentation/settings/settings_screen.dart';
 
@@ -22,9 +22,9 @@ GoRouter getRoutes() {
           ),
           GoRoute(
             path: '/projects',
-            builder: (context, state) => const HomeScreen(),
+            builder: (context, state) => const ProjectsScreen(),
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: HomeScreen(),
+              child: ProjectsScreen(),
             ),
           ),
           GoRoute(
