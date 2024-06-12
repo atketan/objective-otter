@@ -12,10 +12,11 @@ class ProjectsScreenState extends State<ProjectsScreen> {
   List<ProjectsCardDetails> projectCards = [
     ProjectsCardDetails(
       projectName: "Project Bumblebee",
-      projectDescription: "NAF Website Modernisation",
-      projectIcon: const Icon(
+      projectDescription:
+          "NAF Website Modernisation through People, Process & Technology Transformation Strategy",
+      projectIcon: Icon(
         Icons.rocket_launch_sharp,
-        color: Colors.green,
+        color: Colors.yellow[700],
         size: 64,
       ),
       projectTags: [
