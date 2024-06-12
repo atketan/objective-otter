@@ -64,7 +64,7 @@ class HomeScreenState extends State<HomeScreen> {
     ProjectsCardDetails(
       projectName: "Short Circuit",
       projectDescription:
-          "Simplify PIM integration with Bumblebee and NAF Website, Direct Integration",
+          "Simplify PIM consumption architecture; explore direct integration and PoC alongside Bumblebee",
       projectIcon: const Icon(
         Icons.shortcut_sharp,
         color: Colors.black,
