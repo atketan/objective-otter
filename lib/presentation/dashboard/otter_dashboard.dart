@@ -40,10 +40,11 @@ class OtterDashboardState extends State<OtterDashboard> {
         children: [
           SideMenu(
             controller: sideMenu,
+            showToggle: true,
             style: SideMenuStyle(
               // showTooltip: false,
               displayMode: SideMenuDisplayMode.auto,
-              showHamburger: false,
+              showHamburger: true,
               hoverColor: Colors.blue[100],
               selectedHoverColor: Colors.blue[100],
               selectedColor: Colors.lightBlue,
@@ -82,7 +83,7 @@ class OtterDashboardState extends State<OtterDashboard> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
                   child: Text(
-                    'Ketan Bhavsar',
+                    'atketan',
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.grey[800],
