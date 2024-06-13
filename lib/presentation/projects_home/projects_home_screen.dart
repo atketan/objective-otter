@@ -26,6 +26,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
         "PPT Strategy",
       ],
       projectStatus: ProjectStatus.review,
+      primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
       projectName: "NAF Concierge",
@@ -43,6 +44,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
         "Support",
       ],
       projectStatus: ProjectStatus.review,
+      primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
       projectName: "Project X",
@@ -61,6 +63,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
         "Bumblebee",
       ],
       projectStatus: ProjectStatus.planned,
+      primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
       projectName: "Short Circuit",
@@ -68,7 +71,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
           "Simplify PIM consumption architecture; explore direct integration and PoC alongside Bumblebee",
       projectIcon: const Icon(
         Icons.shortcut_sharp,
-        color: Colors.black,
+        color: Colors.deepOrange,
         size: 64,
       ),
       projectTags: [
@@ -79,6 +82,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
         "Bumblebee",
       ],
       projectStatus: ProjectStatus.ongoing,
+      primaryOwnerName: "TBD",
     ),
   ];
 

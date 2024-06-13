@@ -27,6 +27,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
       "PPT Strategy",
     ],
     projectStatus: ProjectStatus.review,
+    primaryOwnerName: "TBD",
   );
 
   @override

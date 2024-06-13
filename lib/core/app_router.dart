@@ -5,6 +5,7 @@ import 'package:objective_otter/presentation/projects_home/projects_home_screen.
 import 'package:objective_otter/presentation/projects_home/main_layout.dart';
 import 'package:objective_otter/presentation/project_details/project_details_screen.dart';
 import 'package:objective_otter/presentation/settings/settings_screen.dart';
+import 'package:objective_otter/presentation/tasks_planner/tasks_home_screen.dart';
 
 /// The route configuration.
 GoRouter getRoutes() {
@@ -36,6 +37,13 @@ GoRouter getRoutes() {
             pageBuilder: (context, state) => NoTransitionPage(
               child:
                   ProjectDetailsScreen(projectId: state.pathParameters['id']!),
+            ),
+          ),
+          GoRoute(
+            path: '/tasks',
+            builder: (context, state) => const TasksHomeScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: TasksHomeScreen(),
             ),
           ),
           GoRoute(

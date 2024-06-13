@@ -60,7 +60,17 @@ class ProjectsCardWidget extends StatelessWidget {
                       "Status: ${projectCard.projectStatus.stringValue}",
                       style: Theme.of(context).textTheme.titleMedium,
                       textAlign: TextAlign.center,
-                    )
+                    ),
+                    const Divider(),
+                    Text(
+                      "Primary Owner: ${projectCard.primaryOwnerName}",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                    if (projectCard.secondaryOwnerName != null)
+                      Text(
+                        "Secondary Owner: ${projectCard.secondaryOwnerName!}",
+                        style: Theme.of(context).textTheme.titleSmall,
+                      ),
                   ],
                 ),
               ),
@@ -78,6 +88,8 @@ class ProjectsCardDetails {
   Icon projectIcon;
   List<String> projectTags;
   ProjectStatus projectStatus;
+  String primaryOwnerName;
+  String? secondaryOwnerName;
 
   ProjectsCardDetails({
     required this.projectName,
@@ -85,6 +97,8 @@ class ProjectsCardDetails {
     required this.projectIcon,
     required this.projectTags,
     required this.projectStatus,
+    required this.primaryOwnerName,
+    this.secondaryOwnerName,
   });
 }
 
