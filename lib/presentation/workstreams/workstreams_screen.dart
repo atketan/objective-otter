@@ -22,7 +22,8 @@ class WorkstreamsScreenState extends State<WorkstreamsScreen> {
                 Text("Add"),
               ],
             ),
-          )
+          ),
+          const SizedBox(width: 16),
         ],
       ),
       body: const Center(

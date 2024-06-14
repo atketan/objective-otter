@@ -100,7 +100,8 @@ class ProjectsScreenState extends State<ProjectsScreen> {
                 Text("Add"),
               ],
             ),
-          )
+          ),
+          const SizedBox(width: 16),
         ],
       ),
       body: Padding(

@@ -22,7 +22,8 @@ class TasksHomeScreenState extends State<TasksHomeScreen> {
                 Text("Add"),
               ],
             ),
-          )
+          ),
+          const SizedBox(width: 16),
         ],
       ),
       body: const Center(

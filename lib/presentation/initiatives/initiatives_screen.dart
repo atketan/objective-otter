@@ -22,7 +22,8 @@ class InitiativesScreenState extends State<InitiativesScreen> {
                 Text("Add"),
               ],
             ),
-          )
+          ),
+          const SizedBox(width: 16),
         ],
       ),
       body: const Center(
