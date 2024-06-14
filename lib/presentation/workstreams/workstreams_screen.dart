@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class TasksHomeScreen extends StatefulWidget {
-  const TasksHomeScreen({super.key});
+class WorkstreamsScreen extends StatefulWidget {
+  const WorkstreamsScreen({super.key});
 
   @override
-  State<TasksHomeScreen> createState() => TasksHomeScreenState();
+  WorkstreamsScreenState createState() => WorkstreamsScreenState();
 }
 
-class TasksHomeScreenState extends State<TasksHomeScreen> {
+class WorkstreamsScreenState extends State<WorkstreamsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: const Text("Tasks Planner"),
+        // title: const Text('Workstreams'),
         actions: [
           TextButton(
             onPressed: () {},
@@ -26,9 +26,7 @@ class TasksHomeScreenState extends State<TasksHomeScreen> {
         ],
       ),
       body: const Center(
-        child: Text(
-          "Tasks Planner",
-        ),
+        child: Text('Workstreams Screen'),
       ),
     );
   }

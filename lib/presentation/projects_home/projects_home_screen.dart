@@ -90,8 +90,19 @@ class ProjectsScreenState extends State<ProjectsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // title: const Text("Home"),
-          ),
+        // title: const Text("Home"),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: const Row(
+              children: [
+                Icon(Icons.add),
+                Text("Add"),
+              ],
+            ),
+          )
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Wrap(

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:objective_otter/presentation/about/about_screen.dart';
+import 'package:objective_otter/presentation/dashboard/otter_dashboard.dart';
+import 'package:objective_otter/presentation/initiatives/initiatives_screen.dart';
 import 'package:objective_otter/presentation/projects_home/projects_home_screen.dart';
 import 'package:objective_otter/presentation/projects_home/main_layout.dart';
 import 'package:objective_otter/presentation/project_details/project_details_screen.dart';
 import 'package:objective_otter/presentation/settings/settings_screen.dart';
 import 'package:objective_otter/presentation/tasks_planner/tasks_home_screen.dart';
+import 'package:objective_otter/presentation/workstreams/workstreams_screen.dart';
 
 /// The route configuration.
 GoRouter getRoutes() {
@@ -20,6 +23,13 @@ GoRouter getRoutes() {
           GoRoute(
             path: '/',
             redirect: (context, state) => '/projects',
+          ),
+          GoRoute(
+            path: '/dashboard',
+            builder: (context, state) => const OtterDashboard(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: OtterDashboard(),
+            ),
           ),
           GoRoute(
             path: '/projects',
@@ -37,6 +47,20 @@ GoRouter getRoutes() {
             pageBuilder: (context, state) => NoTransitionPage(
               child:
                   ProjectDetailsScreen(projectId: state.pathParameters['id']!),
+            ),
+          ),
+          GoRoute(
+            path: '/workstreams',
+            builder: (context, state) => const WorkstreamsScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: WorkstreamsScreen(),
+            ),
+          ),
+          GoRoute(
+            path: '/initiatives',
+            builder: (context, state) => const InitiativesScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: InitiativesScreen(),
             ),
           ),
           GoRoute(

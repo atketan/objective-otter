@@ -41,7 +41,14 @@ class SideMenuState extends State<SideMenu> {
                 child: ListView(
                   children: [
                     const Divider(),
+                    _buildMenuItem(
+                        Icons.dashboard_sharp, "Dashboard", '/dashboard'),
+                    const Divider(),
                     _buildMenuItem(Icons.home, "Projects", '/'),
+                    _buildMenuItem(
+                        Icons.table_chart_sharp, "Workstreams", '/workstreams'),
+                    _buildMenuItem(Icons.pivot_table_chart_sharp, "Initiatives",
+                        '/initiatives'),
                     _buildMenuItem(Icons.task, "Tasks", '/tasks'),
                     const Divider(),
                     _buildMenuItem(Icons.settings, "Settings", '/settings'),
