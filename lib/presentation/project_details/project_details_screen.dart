@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:objective_otter/presentation/projects_home/widgets/projects_card_widget.dart';
+import 'package:objective_otter/presentation/projects_home/models/project_status.dart';
+import 'package:objective_otter/presentation/projects_home/models/projects_card_details.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final String projectId;
@@ -13,6 +14,7 @@ class ProjectDetailsScreen extends StatefulWidget {
 
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   ProjectsCardDetails projectDetails = ProjectsCardDetails(
+    projectId: "Oqifpvaah0Q2MKMC6jKI",
     projectName: "Project Bumblebee",
     projectDescription: "NAF Website Modernisation",
     projectIcon: const Icon(

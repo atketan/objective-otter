@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:objective_otter/presentation/projects_home/models/project_status.dart';
+import 'package:objective_otter/presentation/projects_home/models/projects_card_details.dart';
 import 'package:objective_otter/presentation/projects_home/widgets/projects_card_widget.dart';
 
 class ProjectsScreen extends StatefulWidget {
@@ -11,6 +14,7 @@ class ProjectsScreen extends StatefulWidget {
 class ProjectsScreenState extends State<ProjectsScreen> {
   List<ProjectsCardDetails> projectCards = [
     ProjectsCardDetails(
+      projectId: "Oqifpvaah0Q2MKMC6jKI",
       projectName: "Project Bumblebee",
       projectDescription:
           "NAF Website Modernisation through People, Process & Technology Transformation Strategy",
@@ -29,6 +33,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
       primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
+      projectId: "Oqifpvaah0Q2MKMC6jKI",
       projectName: "NAF Concierge",
       projectDescription: "LLM-powered Support ChatBots Project",
       projectIcon: const Icon(
@@ -47,6 +52,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
       primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
+      projectId: "Oqifpvaah0Q2MKMC6jKI",
       projectName: "Project X",
       projectDescription:
           "Headless CMS Test Suite - to support Bumblebee testing and sign-off",
@@ -66,6 +72,7 @@ class ProjectsScreenState extends State<ProjectsScreen> {
       primaryOwnerName: "TBD",
     ),
     ProjectsCardDetails(
+      projectId: "Oqifpvaah0Q2MKMC6jKI",
       projectName: "Short Circuit",
       projectDescription:
           "Simplify PIM consumption architecture; explore direct integration and PoC alongside Bumblebee",
@@ -106,20 +113,41 @@ class ProjectsScreenState extends State<ProjectsScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Wrap(
-          spacing: 8.0, // horizontal space between cards
-          runSpacing: 8.0, // vertical space between lines
-          children: projectCards
-              .map(
-                (item) => SizedBox(
-                  width: 500,
-                  // height: 100,
-                  child: ProjectsCardWidget(
-                    projectCard: item,
-                  ),
-                ),
-              )
-              .toList(),
+        child: StreamBuilder<QuerySnapshot>(
+          stream: FirebaseFirestore.instance.collection('projects').snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            }
+            switch (snapshot.connectionState) {
+              case ConnectionState.waiting:
+                return const Center(child: CircularProgressIndicator());
+              default:
+                final projectCards = snapshot.data!.docs.map(
+                  (DocumentSnapshot document) {
+                    Map<String, dynamic> data =
+                        document.data()! as Map<String, dynamic>;
+                    // Assuming 'data' contains all the necessary fields for your ProjectsCardWidget
+                    print(data.toString());
+                    return SizedBox(
+                      width: 500,
+                      child: ProjectsCardWidget(
+                        projectCard: ProjectsCardDetails.fromMap(
+                          data,
+                          document.id,
+                        ), // Assuming you have a method to convert Firestore doc to your ProjectCard model
+                      ),
+                    );
+                  },
+                ).toList();
+
+                return Wrap(
+                  spacing: 8.0, // horizontal space between cards
+                  runSpacing: 8.0, // vertical space between lines
+                  children: projectCards,
+                );
+            }
+          },
         ),
       ),
     );

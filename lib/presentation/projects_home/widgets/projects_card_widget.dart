@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:objective_otter/presentation/projects_home/models/project_status.dart';
+import 'package:objective_otter/presentation/projects_home/models/projects_card_details.dart';
 
 class ProjectsCardWidget extends StatelessWidget {
   const ProjectsCardWidget({super.key, required this.projectCard});
@@ -79,74 +81,5 @@ class ProjectsCardWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class ProjectsCardDetails {
-  String projectName;
-  String projectDescription;
-  Icon projectIcon;
-  List<String> projectTags;
-  ProjectStatus projectStatus;
-  String primaryOwnerName;
-  String? secondaryOwnerName;
-
-  ProjectsCardDetails({
-    required this.projectName,
-    required this.projectDescription,
-    required this.projectIcon,
-    required this.projectTags,
-    required this.projectStatus,
-    required this.primaryOwnerName,
-    this.secondaryOwnerName,
-  });
-}
-
-enum ProjectStatus {
-  planned,
-  review,
-  approved,
-  ongoing,
-  paused,
-  completed,
-}
-
-extension ProjectStatusExtension on ProjectStatus {
-  String get stringValue {
-    switch (this) {
-      case ProjectStatus.planned:
-        return 'Planned';
-      case ProjectStatus.review:
-        return 'Under Review';
-      case ProjectStatus.approved:
-        return 'Approved';
-      case ProjectStatus.ongoing:
-        return 'Ongoing';
-      case ProjectStatus.paused:
-        return 'Paused';
-      case ProjectStatus.completed:
-        return 'Completed';
-      default:
-        return 'Unknown';
-    }
-  }
-
-  Color? get statusColor {
-    switch (this) {
-      case ProjectStatus.planned:
-        return Colors.green[50];
-      case ProjectStatus.review:
-        return Colors.lightBlue[50];
-      case ProjectStatus.approved:
-        return Colors.green[100];
-      case ProjectStatus.ongoing:
-        return Colors.purple[50];
-      case ProjectStatus.paused:
-        return Colors.pink[50];
-      case ProjectStatus.completed:
-        return Colors.green[300];
-      default:
-        return Colors.grey[100];
-    }
   }
 }
