@@ -26,9 +26,9 @@ extension WorkstreamStatusExtension on WorkstreamStatus {
   Color get statusColor {
     switch (this) {
       case WorkstreamStatus.planned:
-        return Colors.green[50]!;
+        return Colors.yellow[50]!;
       case WorkstreamStatus.ongoing:
-        return Colors.purple[50]!;
+        return Colors.green[50]!;
       case WorkstreamStatus.paused:
         return Colors.pink[50]!;
       case WorkstreamStatus.completed:
@@ -63,31 +63,31 @@ extension WorkstreamStatusIconExtension on WorkstreamStatus {
         return Icon(
           Icons.schedule,
           color: Colors.green[700],
-          size: 64,
+          size: 48,
         );
       case WorkstreamStatus.ongoing:
         return Icon(
           Icons.play_arrow,
           color: Colors.purple[700],
-          size: 64,
+          size: 48,
         );
       case WorkstreamStatus.paused:
         return Icon(
           Icons.pause,
           color: Colors.pink[700],
-          size: 64,
+          size: 48,
         );
       case WorkstreamStatus.completed:
         return Icon(
           Icons.check_circle,
           color: Colors.green[700],
-          size: 64,
+          size: 48,
         );
       default:
         return Icon(
           Icons.schedule,
           color: Colors.green[700],
-          size: 64,
+          size: 48,
         );
     }
   }
