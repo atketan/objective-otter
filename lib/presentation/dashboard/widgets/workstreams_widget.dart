@@ -21,7 +21,10 @@ class WorkstreamsWidgetState extends State<WorkstreamsWidget> {
       child: Card(
         color: widget.workstreamsCardDetails.workstreamStatus.statusColor,
         child: ListTile(
-          title: Text(widget.workstreamsCardDetails.workstreamName),
+          title: (widget.workstreamsCardDetails.type == "initiative")
+              ? Text(
+                  "${widget.workstreamsCardDetails.workstreamName} | ${widget.workstreamsCardDetails.fiscalYear}")
+              : Text(widget.workstreamsCardDetails.workstreamName),
           subtitle: Text(widget.workstreamsCardDetails.workstreamDescription),
           leading: Column(
             mainAxisSize: MainAxisSize.min,
