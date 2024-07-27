@@ -32,18 +32,17 @@ class OtterDashboardState extends State<OtterDashboard> {
                     padding: EdgeInsets.only(left: 16.0),
                     child: RotatedBox(
                       quarterTurns: -1,
-                      child: Text('Projects'),
+                      child: Text('Workstreams / Teams'),
                     ),
                   ),
                 ),
-                Expanded(
+                Flexible(
                   flex: 9,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: StreamBuilder<QuerySnapshot>(
                       stream: FirebaseFirestore.instance
-                          .collection('projects')
-                          .where('type', isEqualTo: 'project')
+                          .collection('workstreams')
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (snapshot.hasError) {
@@ -101,17 +100,18 @@ class OtterDashboardState extends State<OtterDashboard> {
                     padding: EdgeInsets.only(left: 16.0),
                     child: RotatedBox(
                       quarterTurns: -1,
-                      child: Text('Workstreams / Teams'),
+                      child: Text('Projects'),
                     ),
                   ),
                 ),
-                Flexible(
+                Expanded(
                   flex: 9,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: StreamBuilder<QuerySnapshot>(
                       stream: FirebaseFirestore.instance
-                          .collection('workstreams')
+                          .collection('projects')
+                          .where('type', isEqualTo: 'project')
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (snapshot.hasError) {
@@ -141,7 +141,7 @@ class OtterDashboardState extends State<OtterDashboard> {
 
                             if (workstreamCards.isEmpty) {
                               return const Center(
-                                child: Text('No workstreams found'),
+                                child: Text('No projects found'),
                               );
                             }
 
